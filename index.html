@@ -35,7 +35,6 @@
     /**********************************************
      * 2. COLOR PALETTE
      **********************************************/
-    /* Feel free to adjust these for a different soft palette. */
     :root {
       --teal-dark: #2C5D63;  /* For headings, etc. */
       --teal-light: #EAF6F6; /* Lighter pastel teal for backgrounds */
@@ -63,7 +62,7 @@
       z-index: 1000;
       width: 100%;
       background-color: var(--teal-light); /* Soft teal background */
-      padding: 15px 0; /* More vertical padding for breathing room */
+      padding: 15px 0;
       border-bottom: 1px solid #dceaea; /* Subtle border */
     }
     .nav-container {
@@ -89,18 +88,30 @@
     }
     .nav-links a {
       font-weight: 500;
-      color: #555; /* Soft text color for links */
+      color: #555;
       transition: color 0.3s ease;
     }
     .nav-links a:hover {
       color: var(--teal-medium);
     }
 
+    /* Responsive Navigation for Mobile Devices */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+    }
+
     /**********************************************
      * 5. SECTION BASE STYLES
      **********************************************/
     section {
-      padding: 60px 20px; /* Generous top/bottom spacing */
+      padding: 60px 20px;
     }
     .container {
       max-width: 1200px;
@@ -111,7 +122,7 @@
      * 6. PROFILE SECTION
      **********************************************/
     .profile-section {
-      background-color: var(--section-bg-1); /* Soft alternate background */
+      background-color: var(--section-bg-1);
     }
     .profile-content {
       display: flex;
@@ -195,7 +206,32 @@
     }
 
     /**********************************************
-     * 9. RESUME DOWNLOAD SECTION
+     * 9. SKILLS SUMMARY SECTION
+     **********************************************/
+    .skills-section {
+      background-color: var(--section-bg-2);
+    }
+    .skills-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .skill-category {
+      flex: 1 1 200px;
+    }
+    .skill-category h3 {
+      margin-bottom: 10px;
+      color: var(--teal-dark);
+    }
+    .skill-category ul {
+      list-style: disc inside;
+      margin-left: 20px;
+    }
+
+    /**********************************************
+     * 10. RESUME DOWNLOAD SECTION
      **********************************************/
     .resume-section {
       background-color: var(--section-bg-2);
@@ -215,7 +251,7 @@
       padding: 15px 25px;
       border-radius: 4px;
       font-weight: bold;
-      width: 250px; /* Uniform button width */
+      width: 250px;
       text-align: center;
       transition: background-color 0.3s ease;
     }
@@ -225,7 +261,7 @@
     }
 
     /**********************************************
-     * 10. FOOTER
+     * 11. FOOTER
      **********************************************/
     .footer {
       background-color: var(--footer-bg);
@@ -250,7 +286,7 @@
     }
 
     /**********************************************
-     * 11. MEDIA QUERIES (Additional)
+     * 12. MEDIA QUERIES (Additional)
      **********************************************/
     @media (max-width: 768px) {
       .profile-content {
@@ -274,6 +310,7 @@
         <li><a href="#profile">Profile</a></li>
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Talk to Me</a></li>
         <li><a href="#resume-section">Resume</a></li>
       </ul>
@@ -292,15 +329,14 @@
           <!-- Bio in the middle -->
           <div class="profile-info">
             <h1>Pharaoh Kipkirui Chirchir</h1>
-            </p>
-            <p>
-            <p class="location" style="font-style: italic;">Nairobi, Kenya </p>
+            <p class="location" style="font-style: italic;">Nairobi, Kenya</p>
             <p class="brief-bio">
               Experienced Data Analyst bridging the gap between raw data and strategic decision-making. Skilled in Analytics, Visualization, and Machine Learning.
             </p>
-                <strong>Data Analyst | BI Specialist | Machine Learning Expert</strong><br />
-             </p>
-            <p>
+            <!-- Added extra spacing before the following text -->
+            <p style="margin-top: 20px;">
+              <strong>Data Analyst | Business Intelligence Specialist | Machine Learning Expert</strong>
+            </p>
           </div>
           <!-- Education on the right -->
           <div class="education">
@@ -321,7 +357,7 @@
     <!-- About Me Section -->
     <section id="about" class="about-section">
       <div class="container">
-        <h2>About Me </h2>
+        <h2>About Me</h2>
         <p><strong>Seasoned Data Analyst | 7+ Years Turning Data into Strategic Impact</strong></p>
         <p>
           I design and implement end-to-end analytics solutions that drive efficiency, automation, and data-driven decision-making across industries. With a strong foundation in data modeling, predictive analytics, and business intelligence, I transform complex data into actionable insights that optimize performance and enhance strategic planning.
@@ -335,7 +371,7 @@
         <p>Scalable data pipelines, ETL workflows, and cloud-based solutions</p>
         <h4>Impact</h4>
         <p>
-          Certified Data analyst leading analytics initiatives that delivered 30-95% efficiency gains through workflow automation and reporting solutions leading to data-driven strategies.
+          Certified Data Analyst leading analytics initiatives that delivered 30-95% efficiency gains through workflow automation and reporting solutions leading to data-driven strategies.
         </p>
       </div>
     </section>
@@ -423,12 +459,62 @@
       </div>
     </section>
 
+    <!-- Skills Summary Section -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <h2>Skills Summary</h2>
+        <div class="skills-categories">
+          <div class="skill-category">
+            <h3>Tools</h3>
+            <ul>
+              <li>Power BI</li>
+              <li>Excel</li>
+              <li>SQL Server Management Studio</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Platforms</h3>
+            <ul>
+              <li>Google Colab</li>
+              <li>Jupyter Notebook</li>
+              <li>VS Code</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <ul>
+              <li>Python</li>
+              <li>SQL</li>
+              <li>R</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Frameworks</h3>
+            <ul>
+              <li>Pandas</li>
+              <li>Numpy</li>
+              <li>Scikit-Learn</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <ul>
+              <li>Critical Thinking</li>
+              <li>Problem Solving</li>
+              <li>Communication</li>
+              <li>Collaboration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Resume Download Section -->
     <section id="resume-section" class="resume-section">
       <div class="container">
         <h2>Resume and Certification links</h2>
         <p>
-          For more details on my background, skills, and experience, feel free to download my resume.  
+          For more details on my background, skills, and experience, feel free to download my resume.
           To view my certifications and recognitions, click the button below.
         </p>
         <div class="button-group">
