@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Ensures the site scales well on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pharaoh Kipkirui Chirchir | Data Analyst Portfolio</title>
   <!-- Link to CSS -->
@@ -36,11 +37,14 @@
       width: 100%;
       background-color: #ffffff; /* Soft white background */
       padding: 20px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional subtle shadow */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .nav-container {
       display: flex;
-      align-items: center;
+      align-items: right;
     }
     .nav-logo {
       font-weight: bold;
@@ -66,6 +70,20 @@
     }
     .nav-links a:hover {
       color: #0056b3;
+    }
+
+    /* Responsive Navigation for Mobile Devices */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-links {
+        margin-left: 0;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
 
     /* Profile Section Layout */
@@ -108,7 +126,7 @@
     }
     .education {
       text-align: left;
-      min-width: 300px;
+      min-width: 250px;
       flex-shrink: 0;
     }
 
@@ -217,21 +235,21 @@
     <!-- About Me Section -->
     <section id="about" class="about-section">
       <div class="container">
-        <h2>About Me </h2>
-        <p><strong>Seasoned Data Analyst | 7+ Years making raw data have meaningful impact</strong></p>
+        <h2>About Me 🚀</h2>
+        <p><strong>Seasoned Data Analyst | 7+ Years Turning Data into Strategic Impact</strong></p>
         <p>
-          I design and implement end-to-end data analytics solutions that drive efficiency, automation, and making data-driven decisions across industries. With a strong foundation in data modeling, predictive analytics, and business intelligence, I transform complex data into actionable insights that optimize performance and enhance strategic planning.
+          I design and implement end-to-end analytics solutions that drive efficiency, automation, and data-driven decision-making across industries. With a strong foundation in data modeling, predictive analytics, and business intelligence, I transform complex data into actionable insights that optimize performance and enhance strategic planning.
         </p>
-        <h3> Key Expertise</h3>
-        <h4> Advanced Analytics</h4>
-        <p>Predictive and Prescriptive modeling, machine learning, and statistical forecasting</p>
-        <h4> BI &amp; Visualization</h4>
+        <h3>💡 Key Expertise</h3>
+        <h4>📊 Advanced Analytics</h4>
+        <p>Predictive modeling, machine learning, and statistical forecasting</p>
+        <h4>📈 BI &amp; Visualization</h4>
         <p>Interactive dashboards, automated reporting, and real-time insights</p>
-        <h4> Data Infrastructure</h4>
+        <h4>⚙️ Data Infrastructure</h4>
         <p>Scalable data pipelines, ETL workflows, and cloud-based solutions</p>
-        <h4> Impact</h4>
+        <h4>✅ Impact</h4>
         <p>
-          Led data analytics initiatives that delivered 30-95% efficiency gains and simplification of the process through automation and data-driven strategies. Certified in Business Analytics and Generative AI applications.
+          Led analytics initiatives that delivered 30-95% efficiency gains through automation and data-driven strategies. Certified in Business Analytics and Generative AI applications.
         </p>
       </div>
     </section>
@@ -318,7 +336,7 @@
         </p>
         <div class="button-group">
           <a href="resume.pdf" download class="btn-resume">Download Resume (PDF)</a>
-          <a href="https://example.com/certifications" target="_blank" class="btn-certifications">Certifications &amp; Recognitions</a>
+          <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/details/certifications/" target="_blank" class="btn-certifications">Certifications &amp; Recognitions</a>
         </div>
       </div>
     </section>
