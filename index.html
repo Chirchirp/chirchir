@@ -5,19 +5,24 @@
   <!-- Ensures the site scales well on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pharaoh Kipkirui Chirchir | Data Analyst Portfolio</title>
-  <!-- Link to CSS -->
-  <link rel="stylesheet" href="styles.css" />
+
   <!-- Import Gill Sans Nova -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Gill+Sans+Nova&display=swap"
     rel="stylesheet"
   />
+
   <style>
-    /* Global Styles */
-    body {
+    /* Reset default margin/padding and box-sizing */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
       font-family: 'Gill Sans Nova', sans-serif;
     }
     .container {
@@ -32,61 +37,63 @@
       font-weight: bold;
     }
 
-    /* Navigation */
+    /* NAVIGATION BAR */
     .navbar {
+      position: sticky;      /* Keeps the nav bar pinned on scroll */
+      top: 0;                /* Stick to the top */
+      z-index: 1000;         /* Ensures nav stays above other elements */
       width: 100%;
-      background-color: #ffffff; /* Soft white background */
-      padding: 20px 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc; /* Subtle bottom border */
+      padding: 10px 0;       /* Vertical spacing for the bar */
     }
     .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* Logo on left, links on right */
+      align-items: center;
+      padding: 0 20px;       /* Horizontal spacing inside container */
     }
     .nav-logo {
+      font-size: 1.4rem;
       font-weight: bold;
       color: #007BFF;
-      font-size: 1.5em;
-      align-items: left;
     }
     .nav-links {
       list-style: none;
-      margin: 0;
-      padding: 0;
       display: flex;
-      gap: 20px;
-      align-items: right;
+      gap: 25px; /* Spacing between each nav item */
     }
     .nav-links li {
-      margin: 0;
+      /* No extra styles needed */
     }
     .nav-links a {
       text-decoration: none;
-      font-weight: bold;
-      color: #007BFF;
+      color: #333;      /* Default link color */
+      font-weight: 500; /* Slightly bold text */
       transition: color 0.3s ease;
     }
     .nav-links a:hover {
-      color: #0056b3;
+      color: #007BFF;   /* Hover color matches brand color */
     }
 
-    /* Responsive Navigation for Mobile Devices */
+    /* Mobile/Tablet Responsiveness for the Navigation */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Align items to the left on mobile */
       }
       .nav-links {
         margin-top: 10px;
         flex-wrap: wrap;
-        justify-content: center;
       }
     }
 
-    /* Profile Section Layout */
+    /* PROFILE SECTION */
+    .profile-section {
+      padding: 40px 0;
+    }
     .profile-content {
       display: flex;
       flex-wrap: wrap;
@@ -94,11 +101,10 @@
       align-items: flex-start;
       gap: 20px;
     }
-    /* Photo on the left with an oval shape and fading edge */
     .profile-photo {
       position: relative;
-      width: 220px;    /* Adjust width as needed */
-      height: 220px;   /* Non-square to create an oval */
+      width: 220px;  /* Adjust as desired */
+      height: 220px;
       flex-shrink: 0;
     }
     .profile-photo img {
@@ -106,7 +112,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 100%;  /* Fully round */
+      border-radius: 100%; /* Fully round photo */
     }
     .profile-photo::after {
       content: "";
@@ -116,8 +122,12 @@
       width: 100%;
       height: 100%;
       border-radius: 100%;
-      /* Fading edge: transparent in the center fading to white at the edges */
-      background: radial-gradient(ellipse at center, transparent 70%, rgba(255,255,255,1) 100%);
+      /* Fading edge from center to white */
+      background: radial-gradient(
+        ellipse at center,
+        transparent 70%,
+        rgba(255,255,255,1) 100%
+      );
       pointer-events: none;
     }
     .profile-info {
@@ -130,7 +140,7 @@
       flex-shrink: 0;
     }
 
-    /* About Me Section Styling */
+    /* ABOUT ME SECTION */
     .about-section {
       padding: 40px 0;
     }
@@ -139,7 +149,33 @@
       margin: 10px 0;
     }
 
-    /* Skills Section Styling */
+    /* PROJECTS SECTION */
+    .projects-section {
+      padding: 40px 0;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .project-card {
+      background-color: #fafafa;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .project-link {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .project-link:hover {
+      color: #0056b3;
+    }
+
+    /* SKILLS SECTION (if used) */
     .skills-section {
       background-color: #f9f9f9;
       padding: 20px;
@@ -150,8 +186,8 @@
     .skills-summary span {
       font-weight: bold;
     }
-    
-    /* Resume Download Section */
+
+    /* RESUME DOWNLOAD SECTION */
     .resume-section {
       padding: 40px 0;
       text-align: center;
@@ -163,7 +199,8 @@
       gap: 20px;
       margin-top: 20px;
     }
-    .btn-resume, .btn-certifications {
+    .btn-resume,
+    .btn-certifications {
       background-color: #007BFF;
       color: #fff;
       padding: 12px 25px;
@@ -171,32 +208,46 @@
       border-radius: 4px;
       font-weight: bold;
       transition: background-color 0.3s ease;
-      width: 250px;  /* Fixed width for both buttons */
+      width: 250px;  /* Fixed width so both buttons match */
       text-align: center;
     }
-    .btn-resume:hover, .btn-certifications:hover {
+    .btn-resume:hover,
+    .btn-certifications:hover {
       background-color: #0056b3;
     }
 
-    /* Footer Styling */
+    /* FOOTER */
     .footer {
       background-color: #eee;
       padding: 20px 0;
       text-align: center;
     }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .social-links a {
+      text-decoration: none;
+      color: #007BFF;
+    }
   </style>
 </head>
 <body>
+
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="container nav-container">
-      <div class="nav-logo">Pharaoh Chirchir</div>
+    <div class="nav-container">
+      <!-- Left: Brand Name -->
+      <div class="nav-logo">Pharaoh Kipkirui Chirchir</div>
+
+      <!-- Right: Navigation Links -->
       <ul class="nav-links">
         <li><a href="#profile">Profile</a></li>
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume-section">Resume</a></li>
         <li><a href="#contact">Talk to Me</a></li>
+        <li><a href="#resume-section">Resume</a></li>
       </ul>
     </div>
   </nav>
@@ -237,21 +288,21 @@
     <!-- About Me Section -->
     <section id="about" class="about-section">
       <div class="container">
-        <h2>About Me 🚀</h2>
+        <h2>About Me </h2>
         <p><strong>Seasoned Data Analyst | 7+ Years Turning Data into Strategic Impact</strong></p>
         <p>
           I design and implement end-to-end analytics solutions that drive efficiency, automation, and data-driven decision-making across industries. With a strong foundation in data modeling, predictive analytics, and business intelligence, I transform complex data into actionable insights that optimize performance and enhance strategic planning.
         </p>
-        <h3>💡 Key Expertise</h3>
-        <h4>📊 Advanced Analytics</h4>
+        <h3>Key Expertise</h3>
+        <h4>Advanced Analytics</h4>
         <p>Predictive modeling, machine learning, and statistical forecasting</p>
-        <h4>📈 BI &amp; Visualization</h4>
+        <h4>BI &amp; Visualization</h4>
         <p>Interactive dashboards, automated reporting, and real-time insights</p>
-        <h4>⚙️ Data Infrastructure</h4>
+        <h4>Data Infrastructure</h4>
         <p>Scalable data pipelines, ETL workflows, and cloud-based solutions</p>
-        <h4>✅ Impact</h4>
+        <h4>Impact</h4>
         <p>
-          Led analytics initiatives that delivered 30-95% efficiency gains through automation and data-driven strategies. Certified in Business Analytics and Generative AI applications.
+          Certified Data analyst leading analytics initiatives that delivered 30-95% efficiency gains through workflow automation and reporting solutions leading to data-driven strategies. 
         </p>
       </div>
     </section>
@@ -267,7 +318,11 @@
             <p>
               Performed customer segmentation and market trend analysis using Python/Pandas, with interactive visualizations showing product performance across demographics.
             </p>
-            <a href="https://colab.research.google.com/drive/1XNxkdTQ6K0fG2OkM0QLvi35e9zQ_1ODe?usp=sharing" target="_blank" class="project-link">View Project</a>
+            <a 
+              href="https://colab.research.google.com/drive/1XNxkdTQ6K0fG2OkM0QLvi35e9zQ_1ODe?usp=sharing" 
+              target="_blank" 
+              class="project-link"
+            >View Project</a>
           </div>
 
           <!-- Project 2 -->
@@ -276,7 +331,11 @@
             <p>
               Developed and deployed a supervised learning model (XGBoost) with 89% accuracy to predict customer attrition, including Flask API implementation.
             </p>
-            <a href="https://github.com/Chirchirp/Final-Project--Model-Deployment" target="_blank" class="project-link">View Project</a>
+            <a 
+              href="https://github.com/Chirchirp/Final-Project--Model-Deployment" 
+              target="_blank" 
+              class="project-link"
+            >View Project</a>
           </div>
 
           <!-- Project 3 -->
@@ -285,7 +344,11 @@
             <p>
               Implemented supervised &amp; semi-supervised ML models (Isolation Forest, Logistic Regression) to identify fraudulent transactions with a 97% recall rate.
             </p>
-            <a href="https://colab.research.google.com/drive/1ISRR1X1zJjAfEP9fE-_q_JMjLkc1YIa3?usp=sharing" target="_blank" class="project-link">View Project</a>
+            <a 
+              href="https://colab.research.google.com/drive/1ISRR1X1zJjAfEP9fE-_q_JMjLkc1YIa3?usp=sharing" 
+              target="_blank" 
+              class="project-link"
+            >View Project</a>
           </div>
 
           <!-- Project 4 -->
@@ -294,7 +357,11 @@
             <p>
               Created an interactive Power BI dashboard tracking key HR metrics including attrition reasons, department performance, and retention strategies.
             </p>
-            <a href="https://github.com/Chirchirp/Power-BI-Project-on-Employee-Attrition" target="_blank" class="project-link">View Project</a>
+            <a 
+              href="https://github.com/Chirchirp/Power-BI-Project-on-Employee-Attrition" 
+              target="_blank" 
+              class="project-link"
+            >View Project</a>
           </div>
 
           <!-- Project 5 -->
@@ -303,7 +370,11 @@
             <p>
               Developed complex SQL queries for data mining, cleaning, transformation, and reporting.
             </p>
-            <a href="https://github.com/Chirchirp/Data-Analysis-with-SSMS" target="_blank" class="project-link">View Project</a>
+            <a 
+              href="https://github.com/Chirchirp/Data-Analysis-with-SSMS" 
+              target="_blank" 
+              class="project-link"
+            >View Project</a>
           </div>
         </div>
       </div>
@@ -319,7 +390,14 @@
         </p>
         <div class="button-group">
           <a href="resume.pdf" download class="btn-resume">Download Resume (PDF)</a>
-          <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/details/certifications/" target="_blank" class="btn-certifications" title="Click here to view my certifications and recognitions on LinkedIn">Certifications and Recognitions</a>
+          <a 
+            href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/details/certifications/" 
+            target="_blank" 
+            class="btn-certifications" 
+            title="Click here to view my certifications and recognitions on LinkedIn"
+          >
+            View Certifications &amp; Recognitions
+          </a>
         </div>
       </div>
     </section>
