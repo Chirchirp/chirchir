@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pharaoh Chirchir | Data Analyst Portfolio</title>
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Import Gill Sans Nova (You can host locally or link from a font service) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Gill+Sans+Nova&display=swap" 
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-logo">Pharaoh Chirchir</div>
+    <ul class="nav-links">
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Talk to Me</a></li>
+      <li><a href="#resume-section">Resume</a></li>
+    </ul>
+  </nav>
+
+  <!-- Profile Section -->
+  <section id="profile" class="profile-section">
+    <div class="profile-photo">
+      <img src="images/profile.jpg" alt="Profile Photo of Pharaoh" />
+    </div>
+    <div class="profile-info">
+      <h1>Pharaoh Kipk irui Chirchir</h1>
+      <p class="location">Nairobi, Kenya</p>
+      <p class="brief-bio">
+        Results-driven Data Analyst with 7+ years of experience handling 
+        humanitarian datasets on refugee processing and resettlement. Skilled 
+        in SQL, Python, R, Excel, data visualization (Power BI, Tableau), and 
+        Machine Learning. 
+      </p>
+      <p class="contact-details">
+        <strong>Email:</strong> <a href="mailto:chirkiruiphero@gmail.com">chirkiruiphero@gmail.com</a> <br>
+        <strong>Phone:</strong> <a href="tel:+254725674081">+254 725674081</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a Data Analyst with extensive experience in delivering scalable 
+        reporting solutions, data governance, and process automation. I excel 
+        at integrating data from multiple sources to produce insightful, 
+        real-time analytics for informed decision-making. My background 
+        includes collaborating with cross-functional teams, government 
+        agencies, and donors to drive data-driven strategies that enhance 
+        operational efficiency and impact.
+      </p>
+      <p>
+        My technical expertise covers:
+        <ul>
+          <li>Data Analytics (SQL, Python, R, Excel)</li>
+          <li>Data Visualization (Power BI, Tableau, QlikView)</li>
+          <li>Machine Learning (Supervised & Unsupervised)</li>
+          <li>ETL & Data Warehousing</li>
+          <li>Predictive & Prescriptive Analytics</li>
+          <li>Project & Process Optimization (Agile methodologies)</li>
+        </ul>
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2>Projects Completed</h2>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <h3>Beats by Dre: Consumer Insights Data Analytics</h3>
+          <p>Exploratory and descriptive analytics to derive actionable insights.</p>
+          <a 
+            href="https://colab.research.google.com/drive/1XNxkdTQ6K0fG2OkM0QLvi35e9zQ_1ODe?usp=sharing" 
+            target="_blank"
+            class="project-link"
+          >
+            View Project
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <h3>Customer Churn Model</h3>
+          <p>Supervised Machine Learning project predicting churn risk.</p>
+          <a 
+            href="https://github.com/Chirchirp/Final-Project--Model-Deployment" 
+            target="_blank"
+            class="project-link"
+          >
+            View Project
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <h3>Credit Card Fraud Detection</h3>
+          <p>Fraud detection using supervised & semi-supervised ML approaches.</p>
+          <a 
+            href="https://colab.research.google.com/drive/1ISRR1X1zJjAfEP9fE-_q_JMjLkc1YIa3?usp=sharing" 
+            target="_blank"
+            class="project-link"
+          >
+            View Project
+          </a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <h3>HR Analytics with Power BI</h3>
+          <p>Interactive dashboards for employee attrition and performance metrics.</p>
+          <a 
+            href="https://github.com/Chirchirp/Power-BI-Project-on-Employee-Attrition" 
+            target="_blank"
+            class="project-link"
+          >
+            View Project
+          </a>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+          <h3>SQL Data Mining & Analysis</h3>
+          <p>Database queries, cleaning, transformation, and reporting.</p>
+          <a 
+            href="https://github.com/Chirchirp/Data-Analysis-with-SSMS" 
+            target="_blank"
+            class="project-link"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Talk to Me Section (Contact Form) -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Talk to Me</h2>
+      <p>Interested in working together or have any questions? Drop me a message!</p>
+      <form 
+        class="contact-form"
+        action="mailto:chirkiruiphero@gmail.com"
+        method="POST"
+        enctype="text/plain"
+      >
+        <div class="form-group">
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message*</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Resume Download Section -->
+  <section id="resume-section" class="resume-section">
+    <div class="container">
+      <h2>Download My Resume</h2>
+      <p>For more details on my background, skills, and experience, feel free to download my resume.</p>
+      <a href="resume.pdf" download class="btn-resume">Download Resume (PDF)</a>
+    </div>
+  </section>
+
+  <!-- Footer Contact Links -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>Connect with me on:</p>
+      <div class="social-links">
+        <a href="https://github.com/Chirchirp" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/" target="_blank">LinkedIn</a>
+      </div>
+      <p class="footer-note">© 2025 Pharaoh Chirchir. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
