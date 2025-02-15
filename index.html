@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pharaoh Kipkirui Chirchir | Data Analyst Portfolio</title>
 
-  <!-- Import Gill Sans Nova (or another preferred font) -->
+  <!-- Import Gill Sans Nova -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Gill+Sans+Nova&display=swap"
     rel="stylesheet"
   />
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-u6GULrF6MCkI8wVhjRW8YER0U9b7/5a+okyk1Blb+qPZV8C3uP+mjWJgUnFvmAXZ9kghMfaAFl6i8HkM+65fBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     /**********************************************
@@ -39,12 +41,12 @@
      * 2. COLOR PALETTE
      **********************************************/
     :root {
-      --teal-dark: #2C5D63;
-      --teal-light: #EAF6F6;
-      --teal-medium: #4E9CAF;
-      --section-bg-1: #FAFEFE;
-      --section-bg-2: #F0FCFC;
-      --footer-bg: #EAF6F6;
+      --teal-dark: #2C5D63;  /* For headings, etc. */
+      --teal-light: #EAF6F6; /* Lighter pastel teal for backgrounds */
+      --teal-medium: #4E9CAF;/* Medium teal for hovers & accents */
+      --section-bg-1: #FAFEFE; /* Alternate section background #1 */
+      --section-bg-2: #F0FCFC; /* Alternate section background #2 */
+      --footer-bg: #EAF6F6;    /* Footer background */
     }
 
     /**********************************************
@@ -95,10 +97,13 @@
     .nav-links a:hover {
       color: var(--teal-medium);
     }
-    /* Add the Message button styling (it uses the same styling as nav links) */
+    /* Style for the Message button with an icon */
     .nav-links a#messageBtn {
       font-weight: bold;
       cursor: pointer;
+    }
+    .nav-links a#messageBtn i {
+      margin-right: 5px;
     }
     @media (max-width: 768px) {
       .nav-container {
@@ -155,7 +160,11 @@
       width: 100%;
       height: 100%;
       border-radius: 100%;
-      background: radial-gradient(ellipse at center, transparent 70%, rgba(255,255,255,1) 100%);
+      background: radial-gradient(
+        ellipse at center,
+        transparent 70%,
+        rgba(255,255,255,1) 100%
+      );
       pointer-events: none;
     }
     .profile-info {
@@ -248,7 +257,7 @@
      * 10. RESUME DOWNLOAD SECTION
      **********************************************/
     .resume-section {
-      background-color: #fff;
+      background-color: #fff; /* Soft white background */
       text-align: center;
       padding: 60px 20px;
     }
@@ -324,7 +333,7 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+      background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
     }
     .modal-content {
       background-color: #fff;
@@ -389,8 +398,8 @@
         <!-- Updated link to scroll to footer -->
         <li><a href="#footer">Connect with me on:</a></li>
         <li><a href="#resume-section">Resume</a></li>
-        <!-- New Message Button -->
-        <li><a href="#" id="messageBtn">Message</a></li>
+        <!-- New Message Button with an Icon -->
+        <li><a href="#" id="messageBtn"><i class="fas fa-envelope"></i> Message</a></li>
       </ul>
     </div>
   </nav>
@@ -413,7 +422,7 @@
             </p>
             <!-- Extra vertical spacing before professional titles -->
             <p style="margin-top: 20px;">
-              <strong>Data Analyst | Business Intelligence Specialist | Machine Learning Expert</strong>
+              <strong>Data Analyst | BI Specialist | Machine Learning Expert</strong>
             </p>
           </div>
           <!-- Education on the right -->
@@ -636,7 +645,7 @@
   <div id="messageModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Hi, I am happy to hear from you!</h2>
+      <h2><i class="fas fa-envelope"></i> Hi, I am happy to hear from you!</h2>
       <form id="messageForm" class="modal-form">
         <label for="yourName">Your Name:</label>
         <input type="text" id="yourName" name="yourName" required />
