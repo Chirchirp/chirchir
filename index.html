@@ -22,6 +22,9 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-padding-top: 80px; /* Ensures sections aren't hidden behind sticky navbar */
+    }
     body {
       font-family: 'Gill Sans Nova', sans-serif;
       background-color: #FDFDFD; /* Soft background */
@@ -92,6 +95,7 @@
     .nav-links a:hover {
       color: var(--teal-medium);
     }
+    /* Responsive Navigation for Mobile Devices */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -322,7 +326,8 @@
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Talk to Me</a></li>
+        <!-- Changed "Talk to Me" to "Connect with me on:" -->
+        <li><a href="#contact">Connect with me on:</a></li>
         <li><a href="#resume-section">Resume</a></li>
       </ul>
     </div>
@@ -344,7 +349,7 @@
             <p class="brief-bio">
               Experienced Data Analyst bridging the gap between raw data and strategic decision-making. Skilled in Analytics, Visualization, and Machine Learning.
             </p>
-            <!-- Extra spacing before professional titles -->
+            <!-- Extra vertical spacing before professional titles -->
             <p style="margin-top: 20px;">
               <strong>Data Analyst | Business Intelligence Specialist | Machine Learning Expert</strong>
             </p>
