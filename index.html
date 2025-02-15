@@ -56,20 +56,21 @@
       flex: 1;
     }
     .profile-photo {
-      max-width: 300px;
+      max-width: 250px;
     }
     .profile-photo img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 50%; /* Makes the image circular */
+      object-fit: cover;
     }
     .profile-info {
       flex: 2;
       padding: 0 20px;
     }
     .education {
-      text-align: right;
-      min-width: 250px;
+      text-align: left;
+      min-width: 300px;
     }
 
     /* Skills Section Styling */
