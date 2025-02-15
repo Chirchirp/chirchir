@@ -1,185 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pharaoh Kipkirui Chirchir | Data Analyst Portfolio</title>
-  <!-- Link to CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Import Gill Sans Nova (You can host locally or link from a font service) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Gill+Sans+Nova&display=swap" 
-    rel="stylesheet"
-  />
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-logo">Pharaoh Kipkirui Chirchir</div>
-    <ul class="nav-links">
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Talk to Me</a></li>
-      <li><a href="#resume-section">Resume</a></li>
-    </ul>
-  </nav>
-
-  <!-- Profile Section -->
-  <section id="profile" class="profile-section">
-    <div class="profile-photo">
-      <img src="images/profile.jpg" alt="Profile Photo of Pharaoh" />
+<!-- Bio Section -->
+<section class="container py-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="section-title">About Me</h2>
+            <p><strong>Seasoned Data Analyst | 7+ Years Transforming Data into Strategic Impact.</strong> Specialized in designing end-to-end analytics solutions for humanitarian operations and large-scale migration programs.</p>
+            
+            <p><em>Expert in:</em></p>
+            
+            <p><strong>Advanced Analytics</strong> &nbsp;&nbsp;&#8226; Predictive modeling, machine learning pipelines, and statistical forecasting (Python, R, SQL)</p>
+            <p><strong>BI & Visualization</strong> &nbsp;&nbsp;&#8226; Interactive dashboards and automated reporting systems (Power BI, Tableau, QlikView)</p>
+            <p><strong>Data Infrastructure</strong> &nbsp;&nbsp;&#8226; ETL workflows, Azure cloud solutions, and ERP integrations (Microsoft Dynamics)</p>
+            
+            <p>Delivered 30-95% efficiency gains through workflow automation and real-time analytics for UN agencies and government stakeholders. Certified in Business Analytics and Generative AI applications.</p>
+        </div>
+        <div class="col-md-4">
+            <h2 class="section-title">Education</h2>
+            <ul class="list-unstyled">
+                <li><strong>Master of Science in Data Analytics</strong><br>Nexford University | November 2023 – December 2024</li>
+                <li><strong>Bachelor of Economics and Statistics</strong><br>Chuka University | September 2012 – November 2016</li>
+            </ul>
+        </div>
     </div>
-    <div class="profile-info">
-      <h1>Pharaoh Kipkirui Chirchir</h1>
-      <p class="location">Nairobi, Kenya</p>
-      <p class="brief-bio">
-        Experienced Data Analyst bridging the gap between data and informed decision-making. Skilled 
-        in Data Analytics tools, Data Visualization, and Machine Learning. 
-      </p>
-    </div>
-  </section>
+</section>
 
-  <!-- About Me Section -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        Seasoned Data Analyst | 7+ Years Transforming Data into Strategic Impact.
-        Specialized in designing end-to-end analytics solutions for humanitarian operations and large-scale migration programs. Expert in:
-      </p>
-      <ul>
-        <li>Advanced Analytics: Predictive modeling, machine learning pipelines, and statistical forecasting (Python, R, SQL)</li>
-        <li>BI & Visualization: Interactive dashboards and automated reporting systems (Power BI, Tableau, QlikView)</li>
-        <li>Data Infrastructure: ETL workflows, Azure cloud solutions, and ERP integrations (Microsoft Dynamics)</li>
-      </ul>
-      <p>
-        Delivered 30-95% efficiency gains through workflow automation and real-time analytics for UN agencies and government stakeholders. Certified in Business Analysis (Microsoft) and Generative AI applications.
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects-section">
-    <div class="container">
-      <h2>Projects Completed</h2>
-      <div class="projects-grid">
+<!-- Projects Section -->
+<section class="container py-5">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="row">
         <!-- Project 1 -->
-        <div class="project-card">
-          <h3>Beats by Dre: Consumer Insights Data Analytics</h3>
-          <p>Exploratory and descriptive analytics to derive actionable insights.</p>
-          <a 
-            href="https://colab.research.google.com/drive/1XNxkdTQ6K0fG2OkM0QLvi35e9zQ_1ODe?usp=sharing" 
-            target="_blank"
-            class="project-link"
-          >
-            View Project
-          </a>
+        <div class="col-md-6">
+            <div class="project-card">
+                <h3>Consumer Insights Analytics</h3>
+                <p class="text-muted">Beats by Dre Market Analysis</p>
+                <p>Performed customer segmentation and market trend analysis using Python/Pandas, with interactive visualizations showing product performance across demographics.</p>
+                <a href="https://colab.research.google.com/drive/1XNxkdTQ6K0fG2OkM0QLvi35e9zQ_1ODe?usp=sharing" 
+                   target="_blank" 
+                   class="btn btn-sm" 
+                   style="background-color: var(--secondary-color); color: white;">
+                    View Analysis <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card">
-          <h3>Customer Churn Model</h3>
-          <p>Supervised Machine Learning project predicting churn risk.</p>
-          <a 
-            href="https://github.com/Chirchirp/Final-Project--Model-Deployment" 
-            target="_blank"
-            class="project-link"
-          >
-            View Project
-          </a>
+        <div class="col-md-6">
+            <div class="project-card">
+                <h3>Customer Churn Prediction</h3>
+                <p class="text-muted">Machine Learning Deployment</p>
+                <p>Developed and deployed a supervised learning model (XGBoost) with 89% accuracy to predict customer attrition, including Flask API implementation.</p>
+                <a href="https://github.com/Chirchirp/Final-Project--Model-Deployment" 
+                   target="_blank" 
+                   class="btn btn-sm" 
+                   style="background-color: var(--secondary-color); color: white;">
+                    View Repository <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card">
-          <h3>Credit Card Fraud Detection</h3>
-          <p>Fraud detection using supervised & semi-supervised ML approaches.</p>
-          <a 
-            href="https://colab.research.google.com/drive/1ISRR1X1zJjAfEP9fE-_q_JMjLkc1YIa3?usp=sharing" 
-            target="_blank"
-            class="project-link"
-          >
-            View Project
-          </a>
+        <div class="col-md-6">
+            <div class="project-card">
+                <h3>Fraud Detection System</h3>
+                <p class="text-muted">Credit Card Anomaly Detection</p>
+                <p>Implemented supervised & semi-supervised ML models (Isolation Forest, Logistic Regression) to identify fraudulent transactions with 97% recall rate.</p>
+                <a href="https://colab.research.google.com/drive/1ISRR1X1zJjAfEP9fE-_q_JMjLkc1YIa3?usp=sharing" 
+                   target="_blank" 
+                   class="btn btn-sm" 
+                   style="background-color: var(--secondary-color); color: white;">
+                    View Notebook <i class="fas fa-code"></i>
+                </a>
+            </div>
         </div>
 
         <!-- Project 4 -->
-        <div class="project-card">
-          <h3>HR Analytics with Power BI</h3>
-          <p>Interactive dashboards for employee attrition and performance metrics.</p>
-          <a 
-            href="https://github.com/Chirchirp/Power-BI-Project-on-Employee-Attrition" 
-            target="_blank"
-            class="project-link"
-          >
-            View Project
-          </a>
+        <div class="col-md-6">
+            <div class="project-card">
+                <h3>HR Analytics Dashboard</h3>
+                <p class="text-muted">Employee Attrition Analysis</p>
+                <p>Created interactive Power BI dashboard tracking key HR metrics including attrition reasons, department performance, and retention strategies.</p>
+                <a href="https://github.com/Chirchirp/Power-BI-Project-on-Employee-Attrition" 
+                   target="_blank" 
+                   class="btn btn-sm" 
+                   style="background-color: var(--secondary-color); color: white;">
+                    View Dashboard <i class="fas fa-chart-bar"></i>
+                </a>
+            </div>
         </div>
-
-        <!-- Project 5 -->
-        <div class="project-card">
-          <h3>SQL Data Mining & Analysis</h3>
-          <p>Database queries, cleaning, transformation, and reporting.</p>
-          <a 
-            href="https://github.com/Chirchirp/Data-Analysis-with-SSMS" 
-            target="_blank"
-            class="project-link"
-          >
-            View Project
-          </a>
-        </div>
-      </div>
     </div>
-  </section>
-
-  <!-- Talk to Me Section (Contact Form) -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>Talk to Me</h2>
-      <p>Interested in working together or have any questions? Drop me a message!</p>
-      <form 
-        class="contact-form"
-        action="mailto:chirkiruiphero@gmail.com"
-        method="POST"
-        enctype="text/plain"
-      >
-        <div class="form-group">
-          <label for="name">Name*</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email*</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Message*</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Send</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Resume Download Section -->
-  <section id="resume-section" class="resume-section">
-    <div class="container">
-      <h2>Download My Resume</h2>
-      <p>For more details on my background, skills, and experience, feel free to download my resume.</p>
-      <a href="resume.pdf" download class="btn-resume">Download Resume (PDF)</a>
-    </div>
-  </section>
-
-  <!-- Footer Contact Links -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>Connect with me on:</p>
-      <div class="social-links">
-        <a href="https://github.com/Chirchirp" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/" target="_blank">LinkedIn</a>
-      </div>
-      <p class="footer-note">© 2025 Pharaoh Chirchir. All Rights Reserved.</p>
-    </div>
-  </footer>
-</body>
-</html>
+</section>
