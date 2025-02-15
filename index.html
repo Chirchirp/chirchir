@@ -39,12 +39,12 @@
      * 2. COLOR PALETTE
      **********************************************/
     :root {
-      --teal-dark: #2C5D63;  /* For headings, etc. */
-      --teal-light: #EAF6F6; /* Lighter pastel teal for backgrounds */
-      --teal-medium: #4E9CAF;/* Medium teal for hovers & accents */
-      --section-bg-1: #FAFEFE; /* Alternate section background #1 */
-      --section-bg-2: #F0FCFC; /* Alternate section background #2 */
-      --footer-bg: #EAF6F6;    /* Footer background */
+      --teal-dark: #2C5D63;
+      --teal-light: #EAF6F6;
+      --teal-medium: #4E9CAF;
+      --section-bg-1: #FAFEFE;
+      --section-bg-2: #F0FCFC;
+      --footer-bg: #EAF6F6;
     }
 
     /**********************************************
@@ -64,9 +64,9 @@
       top: 0;
       z-index: 1000;
       width: 100%;
-      background-color: var(--teal-light); /* Soft teal background */
+      background-color: var(--teal-light);
       padding: 15px 0;
-      border-bottom: 1px solid #dceaea; /* Subtle border */
+      border-bottom: 1px solid #dceaea;
     }
     .nav-container {
       max-width: 1200px;
@@ -95,7 +95,11 @@
     .nav-links a:hover {
       color: var(--teal-medium);
     }
-    /* Responsive Navigation for Mobile Devices */
+    /* Add the Message button styling (it uses the same styling as nav links) */
+    .nav-links a#messageBtn {
+      font-weight: bold;
+      cursor: pointer;
+    }
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -151,11 +155,7 @@
       width: 100%;
       height: 100%;
       border-radius: 100%;
-      background: radial-gradient(
-        ellipse at center,
-        transparent 70%,
-        rgba(255,255,255,1) 100%
-      );
+      background: radial-gradient(ellipse at center, transparent 70%, rgba(255,255,255,1) 100%);
       pointer-events: none;
     }
     .profile-info {
@@ -248,7 +248,7 @@
      * 10. RESUME DOWNLOAD SECTION
      **********************************************/
     .resume-section {
-      background-color: #fff; /* Soft white background */
+      background-color: #fff;
       text-align: center;
       padding: 60px 20px;
     }
@@ -311,6 +311,66 @@
         padding: 20px 0;
       }
     }
+
+    /**********************************************
+     * 13. MESSAGE MODAL STYLES
+     **********************************************/
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 4px;
+      max-width: 500px;
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000;
+    }
+    .modal-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .modal-form input, .modal-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .modal-form button {
+      background-color: var(--teal-dark);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .modal-form button:hover {
+      background-color: var(--teal-medium);
+    }
   </style>
 </head>
 <body>
@@ -327,8 +387,10 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <!-- Updated link to scroll to footer -->
-        <li><a href="#footer">Talk with me:</a></li>
+        <li><a href="#footer">Connect with me on:</a></li>
         <li><a href="#resume-section">Resume</a></li>
+        <!-- New Message Button -->
+        <li><a href="#" id="messageBtn">Message</a></li>
       </ul>
     </div>
   </nav>
@@ -493,9 +555,7 @@
             <ul>
               <li>Power BI</li>
               <li>Excel</li>
-              <li>Tableau</li>
               <li>SQL Server Management Studio</li>
-              <li>R Studio</li>
             </ul>
           </div>
           <div class="skill-category">
@@ -504,7 +564,6 @@
               <li>Google Colab</li>
               <li>Jupyter Notebook</li>
               <li>VS Code</li>
-              <li>Qlk</li>
             </ul>
           </div>
           <div class="skill-category">
@@ -513,7 +572,6 @@
               <li>Python</li>
               <li>SQL</li>
               <li>R</li>
-              <li>DAX</li>
             </ul>
           </div>
           <div class="skill-category">
@@ -522,7 +580,6 @@
               <li>Pandas</li>
               <li>Numpy</li>
               <li>Scikit-Learn</li>
-              <li>Matplotlib</li>
             </ul>
           </div>
           <div class="skill-category">
@@ -574,5 +631,53 @@
       <p class="footer-note">© 2025 Pharaoh Chirchir. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- Message Modal -->
+  <div id="messageModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Hi, I am happy to hear from you!</h2>
+      <form id="messageForm" class="modal-form">
+        <label for="yourName">Your Name:</label>
+        <input type="text" id="yourName" name="yourName" required />
+
+        <label for="yourEmail">Email Address:</label>
+        <input type="email" id="yourEmail" name="yourEmail" required />
+
+        <label for="yourMessage">Message:</label>
+        <textarea id="yourMessage" name="yourMessage" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Open modal when "Message" button is clicked
+    document.getElementById("messageBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      document.getElementById("messageModal").style.display = "block";
+    });
+
+    // Close modal when the user clicks on the close button
+    document.querySelector(".close").addEventListener("click", function() {
+      document.getElementById("messageModal").style.display = "none";
+    });
+
+    // Close modal when user clicks outside the modal content
+    window.addEventListener("click", function(e) {
+      if (e.target == document.getElementById("messageModal")) {
+        document.getElementById("messageModal").style.display = "none";
+      }
+    });
+
+    // Handle form submission
+    document.getElementById("messageForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thanks for your message, you will receive a response within 24 hours");
+      document.getElementById("messageModal").style.display = "none";
+      this.reset();
+    });
+  </script>
 </body>
 </html>
