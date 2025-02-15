@@ -25,12 +25,25 @@
       padding: 0 20px;
     }
     
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+      color: #007BFF; /* Standard blue for headings */
+    }
+
     /* Navigation */
     .navbar {
+      width: 100%;
+      background-color: #ffffff; /* Soft white background */
+      padding: 20px 0;
+    }
+    .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+    }
+    .nav-logo {
+      font-weight: bold;
+      color: #007BFF;
     }
     .nav-links {
       list-style: none;
@@ -41,7 +54,8 @@
     }
     .nav-links a {
       text-decoration: none;
-      color: inherit;
+      font-weight: bold;
+      color: #007BFF;
     }
 
     /* Profile Section Layout */
@@ -55,8 +69,8 @@
     /* Photo on the left with an oval shape and fading edge */
     .profile-photo {
       position: relative;
-      width: 250px;    /* Adjust width as needed */
-      height: 250px;   /* Non-square to create an oval */
+      width: 220px;    /* Adjust width as needed */
+      height: 220px;   /* Non-square to create an oval */
       flex-shrink: 0;
     }
     .profile-photo img {
@@ -64,7 +78,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 50%;  /* 50% makes it oval because container isn’t square */
+      border-radius: 100%;  /* 50% makes it oval because container isn’t square */
     }
     .profile-photo::after {
       content: "";
@@ -74,7 +88,7 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      /* Fading edge: transparent in the center fading to white (background color) at the edges */
+      /* Fading edge: transparent in the center fading to white at the edges */
       background: radial-gradient(ellipse at center, transparent 70%, rgba(255,255,255,1) 100%);
       pointer-events: none;
     }
@@ -83,9 +97,18 @@
       padding: 0 20px;
     }
     .education {
-      text-align: right;
+      text-align: left;
       min-width: 250px;
       flex-shrink: 0;
+    }
+
+    /* About Me Section Styling */
+    .about-section {
+      padding: 40px 0;
+    }
+    .about-section p {
+      line-height: 1.6;
+      margin: 10px 0;
     }
 
     /* Skills Section Styling */
@@ -110,9 +133,9 @@
 </head>
 <body>
   <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar container">
-      <div class="nav-logo">Portfolio Profile</div>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="nav-logo">Pharaoh Kipkirui Chirchir</div>
       <ul class="nav-links">
         <li><a href="#profile">Profile</a></li>
         <li><a href="#about">About Me</a></li>
@@ -120,8 +143,8 @@
         <li><a href="#resume-section">Resume</a></li>
         <li><a href="#contact">Talk to Me</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
   <main>
     <!-- Profile Section -->
@@ -159,24 +182,21 @@
     <!-- About Me Section -->
     <section id="about" class="about-section">
       <div class="container">
-        <h2>About Me</h2>
+        <h2>About Me 🚀</h2>
+        <p><strong>Seasoned Data Analyst | 7+ Years Turning Data into Strategic Impact</strong></p>
         <p>
-          <strong>Seasoned Data Analyst | 7+ Years Transforming Data into Strategic Impact.</strong> Specialized in designing end-to-end analytics solutions for humanitarian operations and large-scale migration programs.
+          I design and implement end-to-end analytics solutions that drive efficiency, automation, and data-driven decision-making across industries. With a strong foundation in data modeling, predictive analytics, and business intelligence, I transform complex data into actionable insights that optimize performance and enhance strategic planning.
         </p>
-        <p><em>Expert in:</em></p>
-        <ul>
-          <li>
-            <strong>Advanced Analytics:</strong> Predictive modeling, machine learning pipelines, and statistical forecasting (Python, R, SQL)
-          </li>
-          <li>
-            <strong>BI &amp; Visualization:</strong> Interactive dashboards and automated reporting systems (Power BI, Tableau, QlikView)
-          </li>
-          <li>
-            <strong>Data Infrastructure:</strong> ETL workflows, Azure cloud solutions, and ERP integrations (Microsoft Dynamics)
-          </li>
-        </ul>
+        <h3>💡 Key Expertise</h3>
+        <h4>📊 Advanced Analytics</h4>
+        <p>Predictive modeling, machine learning, and statistical forecasting</p>
+        <h4>📈 BI &amp; Visualization</h4>
+        <p>Interactive dashboards, automated reporting, and real-time insights</p>
+        <h4>⚙️ Data Infrastructure</h4>
+        <p>Scalable data pipelines, ETL workflows, and cloud-based solutions</p>
+        <h4>✅ Impact</h4>
         <p>
-          Delivered 30-95% efficiency gains through workflow automation and real-time analytics for UN agencies and government stakeholders. Certified in Business Analytics and Generative AI applications.
+          Led analytics initiatives that delivered 30-95% efficiency gains through automation and data-driven strategies. Certified in Business Analytics and Generative AI applications.
         </p>
       </div>
     </section>
