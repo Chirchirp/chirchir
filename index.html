@@ -83,9 +83,7 @@
       display: flex;
       gap: 25px;
     }
-    .nav-links li {
-      /* No extra styling needed */
-    }
+    .nav-links li { }
     .nav-links a {
       font-weight: 500;
       color: #555;
@@ -94,8 +92,6 @@
     .nav-links a:hover {
       color: var(--teal-medium);
     }
-
-    /* Responsive Navigation for Mobile Devices */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -177,7 +173,6 @@
     .about-section p {
       margin-bottom: 15px;
     }
-    /* Enhanced Key Expertise Wording */
     .about-section .expertise {
       margin-top: 20px;
     }
@@ -249,8 +244,9 @@
      * 10. RESUME DOWNLOAD SECTION
      **********************************************/
     .resume-section {
-      background-color: var(--section-bg-2);
+      background-color: #fff; /* Soft white background */
       text-align: center;
+      padding: 60px 20px;
     }
     .button-group {
       display: flex;
@@ -348,7 +344,7 @@
             <p class="brief-bio">
               Experienced Data Analyst bridging the gap between raw data and strategic decision-making. Skilled in Analytics, Visualization, and Machine Learning.
             </p>
-            <!-- Added extra vertical spacing before professional titles -->
+            <!-- Extra spacing before professional titles -->
             <p style="margin-top: 20px;">
               <strong>Data Analyst | Business Intelligence Specialist | Machine Learning Expert</strong>
             </p>
@@ -393,7 +389,7 @@
           </p>
           <h4>Impact</h4>
           <p>
-            My initiatives have delivered efficiency gains of 30-95%, streamlining operations, workflows, and driving business growth through smart, data-informed strategies.
+            My initiatives have delivered efficiency gains of 30-95%, streamlining operations and driving business growth through smart, data-informed strategies.
           </p>
         </div>
       </div>
