@@ -628,19 +628,16 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer id="footer" class="footer">
-    <div class="footer-container">
-      <p>Connect with me on:</p>
-      <div class="social-links">
-        <a href="https://github.com/Chirchirp" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/" target="_blank">LinkedIn</a> |
-        <a href="https://wa.me/254725674081" target="_blank">WhatsApp</a> |
-        <a href="mailto:pharaoh.chirchir@gmail.com" target="_blank">Gmail</a>
-      </div>
-      <p class="footer-note">© 2025 Pharaoh Chirchir. All Rights Reserved.</p>
-    </div>
-  </footer>
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <p class="footer-note">© 2025 Pharaoh Kipkirui Chirchir | All Rights Reserved</p>
+    <p class="footer-links">
+      <a href="#" id="termsBtn">Terms & Conditions</a> | 
+      <a href="#" id="securityBtn">Security & Data Protection</a>
+    </p>
+  </div>
+</footer>
 
   <!-- Message Modal -->
   <div id="messageModal" class="modal">
@@ -691,63 +688,109 @@
   </script>
 </body>
 </html>
-  <!-- Terms & Conditions, Security & Data Protection -->
-  <div class="footer-terms">
-    <h3>Terms & Conditions | Security Measures | Data Protection</h3>
-    <p>
-      By using this portfolio website, you agree to abide by the following terms and conditions. All content, including but not limited to projects, data visualizations, and reports, are the intellectual property of Pharaoh Kipkirui Chirchir and may not be copied, distributed, or used without explicit permission.
-    </p>
-    
-    <h4>Terms & Conditions</h4>
+ <!-- Terms & Conditions Modal -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('termsModal')">&times;</span>
+    <h2>Terms & Conditions</h2>
+    <p>By using this portfolio website, you agree to the following terms:</p>
     <ul>
-      <li>Information on this website is provided for personal and educational purposes only.</li>
-      <li>Unauthorized use of any data, scripts, or content is strictly prohibited.</li>
-      <li>Links to third-party sites are provided for reference only, and I am not responsible for their content.</li>
-      <li>This portfolio is subject to updates, and terms may change at any time.</li>
-    </ul>
-
-    <h4>Security Measures</h4>
-    <ul>
-      <li>This website does not collect sensitive user information.</li>
-      <li>Security best practices are implemented to protect hosted content from unauthorized access.</li>
-      <li>Do not attempt to access or modify any content beyond what is publicly available.</li>
-      <li>Reports, insights, and data visualizations are sanitized to prevent misuse.</li>
-    </ul>
-
-    <h4>Data Protection & Privacy Policy</h4>
-    <ul>
-      <li>No personal data is collected, stored, or shared through this website.</li>
-      <li>Any contact information provided via messaging features will only be used for professional communication.</li>
-      <li>Cookies and tracking tools are not used on this website.</li>
-      <li>For any concerns regarding privacy or security, contact me via the provided professional channels.</li>
+      <li>All content displayed is for informational purposes only.</li>
+      <li>Unauthorized use, reproduction, or distribution of content is prohibited.</li>
+      <li>No guarantees are made regarding the accuracy of data presented.</li>
+      <li>The owner reserves the right to modify or remove content without notice.</li>
     </ul>
   </div>
+</div>
 
-  <style>
-    .footer-terms {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #EAF6F6;
-      border-radius: 6px;
-      text-align: left;
-      font-size: 0.9rem;
-      color: #333;
-    }
-    .footer-terms h3 {
-      color: #2C5D63;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-    .footer-terms h4 {
-      margin-top: 15px;
-      color: #4E9CAF;
-    }
-    .footer-terms ul {
-      padding-left: 20px;
-      list-style-type: disc;
-    }
-    .footer-terms ul li {
-      margin-bottom: 5px;
-    }
-  </style>
+<!-- Security & Data Protection Modal -->
+<div id="securityModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('securityModal')">&times;</span>
+    <h2>Security & Data Protection Guidelines</h2>
+    <p>We are committed to protecting your privacy and security:</p>
+    <ul>
+      <li>Personal data shared via contact forms is handled securely and confidentially.</li>
+      <li>No user data is collected or stored beyond what is necessary for communication.</li>
+      <li>Any third-party integrations comply with GDPR and other data protection laws.</li>
+      <li>If you have security concerns, please contact the website owner.</li>
+    </ul>
+  </div>
+</div>
 
+<!-- JavaScript for Modal Functionality -->
+<script>
+  // Function to open a modal
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+  }
+
+  // Function to close a modal
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+  }
+
+  // Open modal when clicking the footer links
+  document.getElementById("termsBtn").onclick = function() {
+    openModal("termsModal");
+  };
+
+  document.getElementById("securityBtn").onclick = function() {
+    openModal("securityModal");
+  };
+
+  // Close modal when clicking outside of it
+  window.onclick = function(event) {
+    if (event.target.classList.contains("modal")) {
+      event.target.style.display = "none";
+    }
+  };
+</script>
+
+<!-- Modal Styles -->
+<style>
+  /* Modal Background */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Close Button */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* Footer Links Styling */
+  .footer-links a {
+    color: var(--teal-dark);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+</style>
