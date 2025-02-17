@@ -416,27 +416,86 @@
     /**********************************************
      * 11. FOOTER
      **********************************************/
-    .footer {
-      background-color: var(--footer-bg);
-      text-align: center;
-      padding: 30px 0;
-    }
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .social-links a {
-      text-decoration: none;
-      color: var(--teal-dark);
-    }
-    .social-links a:hover {
-      color: var(--teal-medium);
-    }
-    .footer-note {
-      margin-top: 10px;
-      color: #444;
-    }
+    /* Footer Section Styling */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-connect {
+  font-size: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #007bff; /* Highlight color */
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.footer-links {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 400;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  color: #007bff; /* Highlight color */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    gap: 20px;
+  }
+
+  .footer-links {
+    font-size: 0.85rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 
     /**********************************************
      * 12. MEDIA QUERIES (Additional)
@@ -782,25 +841,35 @@
     </section>
   </main>
 
-  <!-- Footer Section -->
+<!-- Footer Section -->
 <footer class="footer">
   <div class="footer-container">
-
-    <p>Connect with me on:</p>
-      <div class="social-links">
-        <a href="https://github.com/Chirchirp" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/" target="_blank">LinkedIn</a> |
-        <a href="https://wa.me/254725674081" target="_blank">WhatsApp</a> |
-        <a href="mailto:pharaoh.chirchir@gmail.com" target="_blank">Gmail</a>
+    <div class="footer-content">
+      <!-- Social Links -->
+      <div class="social-connect">
+        <p>Connect with me on:</p>
+        <div class="social-links">
+          <a href="https://github.com/Chirchirp" target="_blank" class="social-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/" target="_blank" class="social-link">LinkedIn</a>
+          <a href="https://wa.me/254725674081" target="_blank" class="social-link">WhatsApp</a>
+          <a href="mailto:chirkiruiphero@gmail.com" target="_blank" class="social-link">Gmail</a>
+        </div>
       </div>
-    
-    <p class="footer-note">© 2025 Pharaoh Kipkirui Chirchir | All Rights Reserved</p>
-    <p class="footer-links">
+
+      <!-- Footer Note -->
+      <div class="footer-note">
+        <p>© 2025 Pharaoh Kipkirui Chirchir | All Rights Reserved</p>
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="footer-links">
       <a href="#" id="termsBtn">Terms & Conditions</a> | 
       <a href="#" id="securityBtn">Security & Data Protection</a>
-    </p>
+    </div>
   </div>
 </footer>
+
 
   <!-- Message Modal -->
   <div id="messageModal" class="modal">
