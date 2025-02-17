@@ -215,15 +215,16 @@
   width: 22%;
   position: relative;
   overflow: hidden;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   margin-bottom: 20px;
   height: auto; /* Prevent changing the height */
 }
 
-/* Hover effect to reveal more information and enlarge the hovered tile */
+/* Hover effect to reveal more information and zoom in */
 .expertise-item:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05); /* Zoom in effect */
 }
 
 .expertise-item h4 {
@@ -297,6 +298,32 @@
   }
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .expertise {
+    justify-content: center; /* Center tiles on smaller screens */
+  }
+
+  .expertise-item {
+    width: 45%; /* Adjust width to fit more easily on mobile */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise-item {
+    width: 90%; /* Stack the tiles vertically */
+    margin-bottom: 20px;
+  }
+
+  .about-section h2 {
+    font-size: 2rem; /* Adjust title font size for mobile */
+  }
+
+  .about-section h3 {
+    font-size: 1.5rem; /* Adjust subtitle font size for mobile */
+  }
+}
 
 
     /**********************************************
