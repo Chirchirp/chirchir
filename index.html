@@ -201,9 +201,10 @@
 
 /* Expertise Section */
 .expertise {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  justify-content: space-between;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .expertise-item {
@@ -211,6 +212,9 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 22%;
+  position: relative;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -229,6 +233,28 @@
 .expertise-item p {
   font-size: 1rem;
   color: #666;
+}
+
+.short-description {
+  display: block;
+  max-height: 60px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.long-description {
+  display: none;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.expertise-item.open .short-description {
+  max-height: 100%;
+}
+
+.expertise-item.open .long-description {
+  display: block;
+  padding-top: 10px;
 }
 
 /* Hover Effect */
@@ -260,6 +286,7 @@
     transform: translateY(0);
   }
 }
+
     /**********************************************
      * 8. PROJECTS SECTION
      **********************************************/
@@ -516,31 +543,51 @@
     <div class="expertise">
       <div class="expertise-item" data-expertise="advanced-analytics">
         <h4>Advanced Analytics</h4>
-        <p>
-          I utilize advanced statistical methods and machine learning algorithms to predict trends, segment customers, and forecast performance. My work enables businesses to make informed, data-driven decisions.
+        <p class="short-description">
+          I utilize advanced statistical methods and machine learning algorithms to predict trends, segment customers, and forecast performance.
+        </p>
+        <p class="long-description">
+          In addition, I work on implementing predictive models using time-series analysis and supervised learning techniques to drive business decisions. By leveraging large-scale datasets, I deliver forecasts with high accuracy and reliability.
         </p>
       </div>
       <div class="expertise-item" data-expertise="bi-visualization">
         <h4>BI &amp; Visualization</h4>
-        <p>
-          I develop interactive dashboards and automated reporting solutions that convert raw data into clear, actionable insights. These visualizations empower decision-makers with real-time information.
+        <p class="short-description">
+          I develop interactive dashboards and automated reporting solutions that convert raw data into clear, actionable insights.
+        </p>
+        <p class="long-description">
+          My expertise includes building dynamic dashboards using tools like Tableau, Power BI, and custom web applications, ensuring data is displayed in ways that facilitate quick decision-making.
         </p>
       </div>
       <div class="expertise-item" data-expertise="data-infrastructure">
         <h4>Data Infrastructure</h4>
-        <p>
-          By designing scalable data pipelines and efficient ETL workflows, I ensure that data is organized, accessible, and reliable across various platforms and systems.
+        <p class="short-description">
+          By designing scalable data pipelines and efficient ETL workflows, I ensure that data is organized, accessible, and reliable.
+        </p>
+        <p class="long-description">
+          I work with cloud platforms like AWS and Azure to design robust data architecture, ensuring the data is processed, stored, and accessed efficiently across multiple systems.
         </p>
       </div>
       <div class="expertise-item" data-expertise="impact">
         <h4>Impact</h4>
-        <p>
-          My initiatives have delivered efficiency gains of 30-95%, streamlining operations and driving business growth through smart, data-informed strategies.
+        <p class="short-description">
+          My initiatives have delivered efficiency gains of 30-95%, streamlining operations and driving business growth.
+        </p>
+        <p class="long-description">
+          I collaborate with cross-functional teams to design data-driven strategies that significantly enhance business performance, reducing costs and increasing revenue.
         </p>
       </div>
     </div>
   </div>
 </section>
+    
+// JavaScript for Toggle Open and Close on Click
+document.querySelectorAll('.expertise-item').forEach(item => {
+  item.addEventListener('click', function () {
+    this.classList.toggle('open');
+  });
+});
+
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
