@@ -117,6 +117,24 @@
         flex-wrap: wrap;
       }
     }
+    .nav {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link i {
+  margin-right: 8px;
+}
+
 
     /**********************************************
  * 5. SECTION BASE STYLES
@@ -608,13 +626,12 @@ section {
     <div class="nav-logo">Pharaoh Kipkirui Chirchir</div>
     <!-- Navigation Links -->
     <ul class="nav-links">
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#footer">Talk with me:</a></li>
-      <li><a href="#resume-section">Resume</a></li>
-      <!-- New Message Button with an Icon -->
+      <li><a href="#profile" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
+      <li><a href="#about-me" class="nav-link"><i class="fas fa-info-circle"></i> About Me</a></li>
+      <li><a href="#projects" class="nav-link"><i class="fas fa-folder"></i> Projects</a></li>
+      <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+      <li><a href="#footer" class="nav-link"><i class="fas fa-comment-dots"></i> Talk with Me</a></li>
+      <li><a href="#resume" class="nav-link"><i class="fas fa-file"></i> Resume</a></li>
       <li><a href="#" id="messageBtn"><i class="fas fa-envelope"></i> Message</a></li>
     </ul>
   </div>
