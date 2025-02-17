@@ -173,7 +173,7 @@
       flex-shrink: 0;
     }
 
-    /**********************************************
+  /**********************************************
      * 7. ABOUT SECTION
  **********************************************/
 .about-section {
@@ -215,13 +215,16 @@
   width: 22%;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+  transition: transform 0.3s ease, width 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
+/* Hover effect to enlarge the tile and reveal the full description */
 .expertise-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  width: 25%; /* Enlarge tile */
 }
 
 .expertise-item h4 {
@@ -231,11 +234,7 @@
   transition: color 0.3s ease;
 }
 
-.expertise-item p {
-  font-size: 1rem;
-  color: #666;
-}
-
+/* Reveal the long description and adjust text visibility */
 .short-description {
   display: block;
   max-height: 60px;
@@ -249,18 +248,14 @@
   color: #555;
 }
 
-.expertise-item.open .short-description {
+/* On hover, show the full description */
+.expertise-item:hover .short-description {
   max-height: 100%;
 }
 
-.expertise-item.open .long-description {
+.expertise-item:hover .long-description {
   display: block;
   padding-top: 10px;
-}
-
-.expertise-item.enlarged {
-  width: 30%; /* Enlarge the tile to focus on it */
-  z-index: 2; /* Bring it to the front */
 }
 
 .expertise-item:hover h4 {
@@ -268,16 +263,19 @@
 }
 
 /* Animation for Expertise Section */
-.expertise-item[data-expertise="advanced-analytics"] {
+.expertise-item:nth-child(1) {
   animation: fadeInUp 0.8s ease-in-out;
 }
-.expertise-item[data-expertise="bi-visualization"] {
+
+.expertise-item:nth-child(2) {
   animation: fadeInUp 1s ease-in-out;
 }
-.expertise-item[data-expertise="data-infrastructure"] {
+
+.expertise-item:nth-child(3) {
   animation: fadeInUp 1.2s ease-in-out;
 }
-.expertise-item[data-expertise="impact"] {
+
+.expertise-item:nth-child(4) {
   animation: fadeInUp 1.4s ease-in-out;
 }
 
@@ -537,7 +535,7 @@
       </div>
     </section>
 
-  <!-- About Me Section -->
+ <!-- About Me Section -->
 <section id="about" class="about-section">
   <div class="container">
     <h2>About Me</h2>
@@ -547,7 +545,7 @@
     </p>
     <h3>Key Expertise</h3>
     <div class="expertise">
-      <div class="expertise-item" data-expertise="advanced-analytics">
+      <div class="expertise-item">
         <h4>Advanced Analytics</h4>
         <p class="short-description">
           I utilize advanced statistical methods and machine learning algorithms to predict trends, segment customers, and forecast performance.
@@ -556,7 +554,7 @@
           In addition, I work on implementing predictive models using time-series analysis and supervised learning techniques to drive business decisions. By leveraging large-scale datasets, I deliver forecasts with high accuracy and reliability.
         </p>
       </div>
-      <div class="expertise-item" data-expertise="bi-visualization">
+      <div class="expertise-item">
         <h4>BI &amp; Visualization</h4>
         <p class="short-description">
           I develop interactive dashboards and automated reporting solutions that convert raw data into clear, actionable insights.
@@ -565,7 +563,7 @@
           My expertise includes building dynamic dashboards using tools like Tableau, Power BI, and custom web applications, ensuring data is displayed in ways that facilitate quick decision-making.
         </p>
       </div>
-      <div class="expertise-item" data-expertise="data-infrastructure">
+      <div class="expertise-item">
         <h4>Data Infrastructure</h4>
         <p class="short-description">
           By designing scalable data pipelines and efficient ETL workflows, I ensure that data is organized, accessible, and reliable.
@@ -574,7 +572,7 @@
           I work with cloud platforms like AWS and Azure to design robust data architecture, ensuring the data is processed, stored, and accessed efficiently across multiple systems.
         </p>
       </div>
-      <div class="expertise-item" data-expertise="impact">
+      <div class="expertise-item">
         <h4>Impact</h4>
         <p class="short-description">
           My initiatives have delivered efficiency gains of 30-95%, streamlining operations and driving business growth.
@@ -587,27 +585,6 @@
   </div>
 </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll('.expertise-item');
-
-    items.forEach(item => {
-      item.addEventListener('click', function () {
-        // Close all tiles
-        items.forEach(innerItem => {
-          if (innerItem !== item) {
-            innerItem.classList.remove('open');
-            innerItem.classList.remove('enlarged');
-          }
-        });
-
-        // Toggle the clicked item
-        item.classList.toggle('open');
-        item.classList.toggle('enlarged');
-      });
-    });
-  });
-</script>
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
