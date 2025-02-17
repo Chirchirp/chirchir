@@ -224,7 +224,7 @@
 .expertise-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  width: 25%; /* Enlarge tile */
+  width: 25%; /* Enlarge the hovered tile */
 }
 
 .expertise-item h4 {
@@ -260,6 +260,12 @@
 
 .expertise-item:hover h4 {
   color: #007bff;
+}
+
+/* Ensure that only the hovered tile is affected and others are not resized */
+.expertise-item:hover ~ .expertise-item {
+  transform: translateY(0); /* Keeps other tiles at normal size */
+  width: 22%; /* Ensure other tiles stay at the default width */
 }
 
 /* Animation for Expertise Section */
