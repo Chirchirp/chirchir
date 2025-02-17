@@ -215,7 +215,8 @@
   width: 22%;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+  cursor: pointer;
 }
 
 .expertise-item:hover {
@@ -257,7 +258,11 @@
   padding-top: 10px;
 }
 
-/* Hover Effect */
+.expertise-item.enlarged {
+  width: 30%; /* Enlarge the tile to focus on it */
+  z-index: 2; /* Bring it to the front */
+}
+
 .expertise-item:hover h4 {
   color: #007bff;
 }
@@ -286,6 +291,7 @@
     transform: translateY(0);
   }
 }
+
 
     /**********************************************
      * 8. PROJECTS SECTION
@@ -531,7 +537,7 @@
       </div>
     </section>
 
-   <!-- About Me Section -->
+  <!-- About Me Section -->
 <section id="about" class="about-section">
   <div class="container">
     <h2>About Me</h2>
@@ -583,15 +589,25 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // Wait until the DOM is fully loaded before attaching event listeners
-    document.querySelectorAll('.expertise-item').forEach(item => {
+    const items = document.querySelectorAll('.expertise-item');
+
+    items.forEach(item => {
       item.addEventListener('click', function () {
-        this.classList.toggle('open');
+        // Close all tiles
+        items.forEach(innerItem => {
+          if (innerItem !== item) {
+            innerItem.classList.remove('open');
+            innerItem.classList.remove('enlarged');
+          }
+        });
+
+        // Toggle the clicked item
+        item.classList.toggle('open');
+        item.classList.toggle('enlarged');
       });
     });
   });
 </script>
-
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
