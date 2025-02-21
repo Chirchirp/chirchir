@@ -627,7 +627,7 @@ section {
     <!-- Navigation Links -->
     <ul class="nav-links">
       <li><a href="#profile" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
-      <li><a href="#about-me" class="nav-link"><i class="fas fa-info-circle"></i> About Me</a></li>
+      <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About Me</a></li>
       <li><a href="#projects" class="nav-link"><i class="fas fa-folder"></i> Projects</a></li>
       <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
       <li><a href="#footer" class="nav-link"><i class="fas fa-comment-dots"></i> Talk with Me</a></li>
@@ -637,25 +637,6 @@ section {
   </div>
 </nav>
   
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();  // Prevent default jump behavior
-            const targetId = this.getAttribute('href').substring(1);  // Get section ID
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 50, // Adjust for fixed navbars if needed
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-});
-</script>
-
   <main>
     <!-- Profile Section -->
     <section id="profile" class="profile-section">
