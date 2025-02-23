@@ -6,18 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pharaoh Kipkirui Chirchir | Data Analyst Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  <!-- EmailJS (Optional: for sending emails directly from the client) -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    // Initialize EmailJS with your user ID (replace 'YOUR_USER_ID' with your actual EmailJS user id)
-    (function(){
-      emailjs.init("Z5IfVlRtBYqwWMLSM");
-    })();
-  </script>
-</head>
-<body>
+  
   <!-- Import Gill Sans Nova -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
@@ -1092,21 +1081,6 @@ section {
     font-size: 20px;
     cursor: pointer;
   }
-
-  // Handle Message Form submission using EmailJS to forward emails.
-  // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_USER_ID' with your EmailJS details.
-  const messageForm = document.getElementById("messageForm");
-  messageForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-    emailjs.sendForm('service_h3eoa9g', 'template_9varj9u', this)
-      .then(function() {
-          alert("Thanks for your message. You will receive a response within 24 hours.");
-          messageModal.style.display = "none";
-          messageForm.reset();
-      }, function(error) {
-          alert("Failed to send message, please try again later.");
-      });
-  });
 
   /* Footer Links Styling */
   .footer-links a {
