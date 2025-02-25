@@ -633,7 +633,7 @@
           For more details on my background, skills, and experience, feel free to click on the links below to view my resume, certifications and recognitions, or to visit my blog.
         </p>
         <div class="button-group">
-          <a href="https://chirchirp.github.io/resume/details/resume/" target="_blank" class="btn-resume" title="Click here to view my resume on my website">View Resume</a>
+          <a href="https://chirchirp.github.io/resume/" target="_blank" class="btn-resume" title="Click here to view my resume on my website">View Resume</a>
           <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/details/certifications/" target="_blank" class="btn-certifications" title="Click here to view my certifications and recognitions on LinkedIn">View Certifications &amp; Recognitions</a>
           <a href="BLOG_URL_HERE" target="_blank" class="btn-blog" title="Click here to visit my blog">Visit Blog</a>
         </div>
@@ -684,7 +684,7 @@
   <!-- JavaScript for Modal, EmailJS, and Toggle Functionality -->
   <script>
     // Initialize EmailJS (replace 'YOUR_USER_ID' with your actual EmailJS user ID)
-    emailjs.init('YOUR_USER_ID');
+    emailjs.init('Z5IfVlRtBYqwWMLSM');
 
     // Open modal when "Message" button is clicked
     document.getElementById("messageBtn").addEventListener("click", function(e) {
@@ -707,7 +707,7 @@
     // Handle form submission with EmailJS
     document.getElementById("messageForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      emailjs.sendForm('service_h3eoa9g', 'template_9varj9u', this)
         .then(function(response) {
           alert('Message sent successfully!');
           document.getElementById("messageModal").style.display = "none";
