@@ -117,235 +117,208 @@
       }
     }
     .nav {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: black;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-link i {
-  margin-right: 8px;
-}
-
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-link i {
+      margin-right: 8px;
+    }
 
     /**********************************************
- * 5. SECTION BASE STYLES
- **********************************************/
-section {
-  padding: 60px 20px;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+     * 5. SECTION BASE STYLES
+     **********************************************/
+    section {
+      padding: 60px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-/**********************************************
- * 6. PROFILE SECTION
- **********************************************/
-.profile-section {
-  background-color: var(--section-bg-1);
-}
-.profile-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.profile-photo {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  flex-shrink: 0;
-}
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 100%;
-}
-.profile-photo::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  background: radial-gradient(ellipse at center, transparent 70%, rgba(255,255,255,1) 100%);
-  pointer-events: none;
-}
-.profile-info {
-  flex: 2;
-  padding: 0 20px;
-}
-.education {
-  text-align: left;
-  min-width: 250px;
-  flex-shrink: 0;
-}
+    /**********************************************
+     * 6. PROFILE SECTION
+     **********************************************/
+    .profile-section {
+      background-color: var(--section-bg-1);
+    }
+    .profile-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .profile-photo {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      flex-shrink: 0;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+    .profile-photo::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background: radial-gradient(ellipse at center, transparent 70%, rgba(255,255,255,1) 100%);
+      pointer-events: none;
+    }
+    .profile-info {
+      flex: 2;
+      padding: 0 20px;
+    }
+    .education {
+      text-align: left;
+      min-width: 250px;
+      flex-shrink: 0;
+    }
 
-/**********************************************
+    /**********************************************
      * 7. ABOUT SECTION
- **********************************************/
-.about-section {
-  background-color: var(--section-bg-2);
-  padding: 50px 0;
-}
+     **********************************************/
+    .about-section {
+      background-color: var(--section-bg-2);
+      padding: 50px 0;
+    }
+    .about-section p {
+      margin-bottom: 15px;
+    }
+    .about-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .about-section h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    /* Expertise Section */
+    .expertise {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .expertise-item {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 22%;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      margin-bottom: 20px;
+      height: auto; /* Prevent changing the height */
+    }
+    /* Hover effect to reveal more information and zoom in */
+    .expertise-item:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transform: scale(1.05); /* Zoom in effect */
+    }
+    .expertise-item h4 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+    }
+    /* Short and Long Description */
+    .short-description {
+      display: block;
+      max-height: 60px;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+    .long-description {
+      display: none;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    /* Show long description on hover */
+    .expertise-item:hover .short-description {
+      max-height: 100%;
+    }
+    .expertise-item:hover .long-description {
+      display: block;
+      padding-top: 10px;
+    }
+    .expertise-item:hover h4 {
+      color: #007bff;
+    }
+    /* Ensuring tiles do not change size on hover */
+    .expertise-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    /* Animation for Expertise Section */
+    .expertise-item:nth-child(1) {
+      animation: fadeInUp 0.8s ease-in-out;
+    }
+    .expertise-item:nth-child(2) {
+      animation: fadeInUp 1s ease-in-out;
+    }
+    .expertise-item:nth-child(3) {
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+    .expertise-item:nth-child(4) {
+      animation: fadeInUp 1.4s ease-in-out;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .expertise {
+        justify-content: center; /* Center tiles on smaller screens */
+      }
+      .expertise-item {
+        width: 45%; /* Adjust width to fit more easily on mobile */
+        margin-bottom: 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      .expertise-item {
+        width: 90%; /* Stack the tiles vertically */
+        margin-bottom: 20px;
+      }
+      .about-section h2 {
+        font-size: 2rem; /* Adjust title font size for mobile */
+      }
+      .about-section h3 {
+        font-size: 1.5rem; /* Adjust subtitle font size for mobile */
+      }
+    }
 
-.about-section p {
-  margin-bottom: 15px;
-}
-
-.about-section h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.about-section h3 {
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-/* Expertise Section */
-.expertise {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.expertise-item {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 22%;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-  margin-bottom: 20px;
-  height: auto; /* Prevent changing the height */
-}
-
-/* Hover effect to reveal more information and zoom in */
-.expertise-item:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transform: scale(1.05); /* Zoom in effect */
-}
-
-.expertise-item h4 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
-}
-
-/* Short and Long Description */
-.short-description {
-  display: block;
-  max-height: 60px;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-}
-
-.long-description {
-  display: none;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* Show long description on hover */
-.expertise-item:hover .short-description {
-  max-height: 100%;
-}
-
-.expertise-item:hover .long-description {
-  display: block;
-  padding-top: 10px;
-}
-
-.expertise-item:hover h4 {
-  color: #007bff;
-}
-
-/* Ensuring tiles do not change size on hover */
-.expertise-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-/* Animation for Expertise Section */
-.expertise-item:nth-child(1) {
-  animation: fadeInUp 0.8s ease-in-out;
-}
-
-.expertise-item:nth-child(2) {
-  animation: fadeInUp 1s ease-in-out;
-}
-
-.expertise-item:nth-child(3) {
-  animation: fadeInUp 1.2s ease-in-out;
-}
-
-.expertise-item:nth-child(4) {
-  animation: fadeInUp 1.4s ease-in-out;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .expertise {
-    justify-content: center; /* Center tiles on smaller screens */
-  }
-
-  .expertise-item {
-    width: 45%; /* Adjust width to fit more easily on mobile */
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .expertise-item {
-    width: 90%; /* Stack the tiles vertically */
-    margin-bottom: 20px;
-  }
-
-  .about-section h2 {
-    font-size: 2rem; /* Adjust title font size for mobile */
-  }
-
-  .about-section h3 {
-    font-size: 1.5rem; /* Adjust subtitle font size for mobile */
-  }
-}
-
-
- /**********************************************
+    /**********************************************
      * 8. PROJECTS SECTION
      **********************************************/
     .projects-section {
@@ -416,8 +389,10 @@ section {
       gap: 20px;
       margin-top: 30px;
     }
+    /* Updated button styling to include Blog button */
     .btn-resume,
-    .btn-certifications {
+    .btn-certifications,
+    .btn-blog {
       background-color: var(--teal-dark);
       color: #fff;
       padding: 15px 25px;
@@ -428,118 +403,101 @@ section {
       transition: background-color 0.3s ease;
     }
     .btn-resume:hover,
-    .btn-certifications:hover {
+    .btn-certifications:hover,
+    .btn-blog:hover {
       background-color: var(--teal-medium);
     }
-/**********************************************
- * 11. FOOTER
- **********************************************/
-.footer {
-  background-color: #EAF6F6; 
-  color: #333; /* Dark text for contrast */
-  padding: 15px 0; 
-  text-align: center;
-}
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.social-connect {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.social-link {
-  color: #6c6c6c; /* Pastel grey for social links */
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.social-link:hover {
-  color: #80b3ff; /* Pastel blue highlight */
-}
-
-.footer-note {
-  font-size: 0.9rem;
-  color: #888; /* Light grey for footer note */
-  margin-top: 10px;
-}
-
-.footer-links {
-  margin-top: 10px;
-  font-size: 0.9rem;
-}
-
-.footer-links a {
-  color: #6c6c6c; /* Pastel grey for footer links */
-  text-decoration: none;
-  font-weight: 400;
-  margin: 0 10px;
-}
-
-.footer-links a:hover {
-  color: #80b3ff; /* Pastel blue highlight */
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .footer-content {
-    gap: 10px;
-  }
-
-  .footer-links {
-    font-size: 0.85rem;
-  }
-
-  .social-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-/* Social Media Icons Styling */
-.social-links {
-  display: flex;
-  gap: 10px;
-}
-
-.social-link i {
-  font-size: 24px; /* Adjust size as needed */
-  color: #333; /* Adjust color */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-link i:hover {
-  transform: scale(1.1); /* Slightly enlarge the icon on hover */
-  color: #0073e6; /* Hover color */
-}
-
-/* Optional: You can change the color to match your brand colors */
-.social-link i {
-  color: #333; /* Default color */
-}
-
-.social-link i:hover {
-  color: #0073e6; /* Change color on hover */
-}
-
+    /**********************************************
+     * 11. FOOTER
+     **********************************************/
+    .footer {
+      background-color: #EAF6F6; 
+      color: #333; /* Dark text for contrast */
+      padding: 15px 0; 
+      text-align: center;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .social-connect {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .social-link {
+      color: #6c6c6c; /* Pastel grey for social links */
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .social-link:hover {
+      color: #80b3ff; /* Pastel blue highlight */
+    }
+    .footer-note {
+      font-size: 0.9rem;
+      color: #888; /* Light grey for footer note */
+      margin-top: 10px;
+    }
+    .footer-links {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      color: #6c6c6c; /* Pastel grey for footer links */
+      text-decoration: none;
+      font-weight: 400;
+      margin: 0 10px;
+    }
+    .footer-links a:hover {
+      color: #80b3ff; /* Pastel blue highlight */
+    }
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .footer-content {
+        gap: 10px;
+      }
+      .footer-links {
+        font-size: 0.85rem;
+      }
+      .social-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+    /* Social Media Icons Styling */
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+    .social-link i {
+      font-size: 24px; /* Adjust size as needed */
+      color: #333; /* Adjust color */
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .social-link i:hover {
+      transform: scale(1.1); /* Slightly enlarge the icon on hover */
+      color: #0073e6; /* Hover color */
+    }
+    .social-link i {
+      color: #333; /* Default color */
+    }
+    .social-link i:hover {
+      color: #0073e6; /* Change color on hover */
+    }
 
     /**********************************************
      * 12. MEDIA QUERIES (Additional)
@@ -615,26 +573,23 @@ section {
   </style>
 </head>
 <body>
-
-  
-
   <!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="nav-container">
-    <!-- Brand Name -->
-    <div class="nav-logo">Pharaoh Kipkirui Chirchir</div>
-    <!-- Navigation Links -->
-    <ul class="nav-links">
-      <li><a href="#profile" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
-      <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About Me</a></li>
-      <li><a href="#projects" class="nav-link"><i class="fas fa-folder"></i> Projects</a></li>
-      <li><a href="#skills" class="nav-link"><i class="fas fa-database"></i> Skills</a></li>
-      <li><a href="#footer" class="nav-link"><i class="fas fa-comment-dots"></i> Talk with Me</a></li>
-      <li><a href="#resume-section" class="nav-link"><i class="fas fa-file"></i> Resume</a></li>
-      <li><a href="#" id="messageBtn"><i class="fas fa-envelope"></i> Message</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Brand Name -->
+      <div class="nav-logo">Pharaoh Kipkirui Chirchir</div>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#profile" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
+        <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About Me</a></li>
+        <li><a href="#projects" class="nav-link"><i class="fas fa-folder"></i> Projects</a></li>
+        <li><a href="#skills" class="nav-link"><i class="fas fa-database"></i> Skills</a></li>
+        <li><a href="#footer" class="nav-link"><i class="fas fa-comment-dots"></i> Talk with Me</a></li>
+        <li><a href="#resume-section" class="nav-link"><i class="fas fa-file"></i> Resume</a></li>
+        <li><a href="#" id="messageBtn"><i class="fas fa-envelope"></i> Message</a></li>
+      </ul>
+    </div>
+  </nav>
   
   <main>
     <!-- Profile Section -->
@@ -673,56 +628,55 @@ section {
       </div>
     </section>
 
- <!-- About Me Section -->
-<section id="about" class="about-section">
-  <div class="container">
-    <h2>About Me</h2>
-    <p><strong>Seasoned Data Analyst | 7+ Years Turning Data into Strategic Impact</strong></p>
-    <p>
-      I design and implement end-to-end analytics solutions that drive efficiency, automation, and data-driven decision-making across industries. With a strong foundation in data modeling, predictive analytics, and business intelligence, I transform complex data into actionable insights that optimize performance and enhance strategic planning.
-    </p>
-    <h3>Key Expertise</h3>
-    <div class="expertise">
-      <div class="expertise-item">
-        <h4>Advanced Analytics</h4>
-        <p class="short-description">
-          I utilize advanced statistical methods and machine learning algorithms to predict trends, segment customers, and forecast performance.
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p><strong>Seasoned Data Analyst | 7+ Years Turning Data into Strategic Impact</strong></p>
+        <p>
+          I design and implement end-to-end analytics solutions that drive efficiency, automation, and data-driven decision-making across industries. With a strong foundation in data modeling, predictive analytics, and business intelligence, I transform complex data into actionable insights that optimize performance and enhance strategic planning.
         </p>
-        <p class="long-description">
-          In addition, I work on implementing predictive models using time-series analysis and supervised learning techniques to drive business decisions. By leveraging large-scale datasets, I deliver forecasts with high accuracy and reliability.
-        </p>
+        <h3>Key Expertise</h3>
+        <div class="expertise">
+          <div class="expertise-item">
+            <h4>Advanced Analytics</h4>
+            <p class="short-description">
+              I utilize advanced statistical methods and machine learning algorithms to predict trends, segment customers, and forecast performance.
+            </p>
+            <p class="long-description">
+              In addition, I work on implementing predictive models using time-series analysis and supervised learning techniques to drive business decisions. By leveraging large-scale datasets, I deliver forecasts with high accuracy and reliability.
+            </p>
+          </div>
+          <div class="expertise-item">
+            <h4>BI &amp; Visualization</h4>
+            <p class="short-description">
+              I develop interactive dashboards and automated reporting solutions that convert raw data into clear, actionable insights.
+            </p>
+            <p class="long-description">
+              My expertise includes building dynamic dashboards using tools like Tableau, Power BI, and custom web applications, ensuring data is displayed in ways that facilitate quick decision-making.
+            </p>
+          </div>
+          <div class="expertise-item">
+            <h4>Data Infrastructure</h4>
+            <p class="short-description">
+              By designing scalable data pipelines and efficient ETL workflows, I ensure that data is organized, accessible, and reliable.
+            </p>
+            <p class="long-description">
+              I work with cloud platforms like AWS and Azure to design robust data architecture, ensuring the data is processed, stored, and accessed efficiently across multiple systems.
+            </p>
+          </div>
+          <div class="expertise-item">
+            <h4>Impact</h4>
+            <p class="short-description">
+              My initiatives have delivered efficiency gains of 30-95%, streamlining operations and driving business growth.
+            </p>
+            <p class="long-description">
+              I collaborate with cross-functional teams to design data-driven strategies that significantly enhance business performance, reducing costs and increasing revenue.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="expertise-item">
-        <h4>BI &amp; Visualization</h4>
-        <p class="short-description">
-          I develop interactive dashboards and automated reporting solutions that convert raw data into clear, actionable insights.
-        </p>
-        <p class="long-description">
-          My expertise includes building dynamic dashboards using tools like Tableau, Power BI, and custom web applications, ensuring data is displayed in ways that facilitate quick decision-making.
-        </p>
-      </div>
-      <div class="expertise-item">
-        <h4>Data Infrastructure</h4>
-        <p class="short-description">
-          By designing scalable data pipelines and efficient ETL workflows, I ensure that data is organized, accessible, and reliable.
-        </p>
-        <p class="long-description">
-          I work with cloud platforms like AWS and Azure to design robust data architecture, ensuring the data is processed, stored, and accessed efficiently across multiple systems.
-        </p>
-      </div>
-      <div class="expertise-item">
-        <h4>Impact</h4>
-        <p class="short-description">
-          My initiatives have delivered efficiency gains of 30-95%, streamlining operations and driving business growth.
-        </p>
-        <p class="long-description">
-          I collaborate with cross-functional teams to design data-driven strategies that significantly enhance business performance, reducing costs and increasing revenue.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
@@ -884,15 +838,17 @@ section {
       <div class="container">
         <h2>Resume and Certification links</h2>
         <p>
-          For more details on my background, skills, and experience, feel free to click on the links to my resume webesite and to view my certifications and recognitions, click the button below.
+          For more details on my background, skills, and experience, feel free to click on the links below to view my resume, certifications and recognitions, or to visit my blog.
         </p>
         <div class="button-group">
           <a
-            href="https://chirchirp.github.io/resume//details/resume/" 
+            href="https://chirchirp.github.io/resume/details/resume/" 
             target="_blank" 
             class="btn-resume" 
             title="Click here to view my resume on my website"
-          <a
+          >
+            View Resume
+          </a>
           <a 
             href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138/details/certifications/" 
             target="_blank" 
@@ -901,47 +857,54 @@ section {
           >
             View Certifications &amp; Recognitions
           </a>
+          <a 
+            href="BLOG_URL_HERE" 
+            target="_blank" 
+            class="btn-blog" 
+            title="Click here to visit my blog"
+          >
+            Visit Blog
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-<div class="footer" id="footer">  
-  <div class="footer">
-    <div class="footer-container">
-      <div class="footer-content">
-        <div class="social-connect">
-          <p><strong>Connect with me:</strong></p>
+  <div class="footer" id="footer">  
+    <div class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="social-connect">
+            <p><strong>Connect with me:</strong></p>
+          </div>
+        
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138" class="social-link" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Chirchirp" class="social-link" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://wa.me/254725674081" class="social-link" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:chirkiruiphero@gmail.com" class="social-link" target="_blank">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+
+          <div class="footer-note">
+            <p>© 2025 Pharaoh Chirchir | All Rights Reserved</p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
         </div>
-      
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/pharaoh-chirchir-0b600b138" class="social-link" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/Chirchirp" class="social-link" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://wa.me/254725674081" class="social-link" target="_blank">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:chirkiruiphero@gmail.com" class="social-link" target="_blank">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-
-      <div class="footer-note">
-        <p>© 2025 Pharaoh Chirchir | All Rights Reserved</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
       </div>
     </div>
   </div>
-</div>
-
-
 
   <!-- Message Modal -->
   <div id="messageModal" class="modal">
@@ -992,7 +955,7 @@ section {
   </script>
 </body>
 </html>
- <!-- Terms & Conditions Modal -->
+<!-- Terms & Conditions Modal -->
 <div id="termsModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('termsModal')">&times;</span>
